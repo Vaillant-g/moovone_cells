@@ -8,3 +8,5 @@ pour tester il suffit d'appeler la fonction cells, ex
 ```javascript
 cells(['0', '1', '1', '0', '0', '1', '0'], 2);
 ```
+
+Si vous avez la moindre question, n'hésitez pas à me contacter !
