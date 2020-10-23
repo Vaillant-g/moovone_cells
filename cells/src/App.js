@@ -3,7 +3,7 @@ import './App.css';
 import Saisie from './components/saisie';
 import Affichage from './components/affichage';
 import Simulation from './components/simulation';
-import { cellsReact } from '../../cellsReact';
+import { cellsReact } from './cellsReact';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col, Container } from 'react-bootstrap';
 
