@@ -7,7 +7,8 @@ This project is a bonus part for the javascript test where I have to determine t
 you can chose those inputs with the form, then click "Start Simulation" to see the state of the cells change depending on k.
 
 # Install & use
-
-### `npm install`
-### `npm start`
-
+```bash
+cd cells
+npm install
+npm start
+```
