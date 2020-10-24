@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Saisie from './components/saisie';
-import Affichage from './components/affichage';
+import Inputs from './components/inputs';
 import Simulation from './components/simulation';
 import { cellsReact } from './cellsReact';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -67,7 +66,7 @@ class App extends Component {
       <Container>
         <Row>
           <Col>
-            <Saisie
+            <Inputs
               configuration={this.state.initialConfiguration}
               addExcitedCell={this.addExcitedCell}
               addQuietCell={this.addQuietCell}
@@ -75,8 +74,7 @@ class App extends Component {
               tmpk={this.state.tmpk}
               saveKvalue={this.saveKvalue}
               resetConfig={this.resetConfig}
-              startSimulation={this.startSimulation}></Saisie>
-            <Affichage config={this.state.config}></Affichage>
+              startSimulation={this.startSimulation}></Inputs>
             <Simulation
               k={this.state.k}
               setStepValue={this.setStepValue}

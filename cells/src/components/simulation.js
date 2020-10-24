@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col, Container, Button, ButtonGroup, Jumbotron } from 'react-bootstrap';
-import Affichagecells from './affichagecells';
+import DisplayCells from './displayCells';
 
 class Simulation extends Component {
 
@@ -40,7 +40,7 @@ class Simulation extends Component {
                 <Row>
                     <Col>
                         <Jumbotron>
-                            <Affichagecells config={this.props.simulation[this.props.step]}></Affichagecells>
+                            <DisplayCells config={this.props.simulation[this.props.step]}></DisplayCells>
                         </Jumbotron>
                     </Col>
                 </Row>

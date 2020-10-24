@@ -1,10 +1,9 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-export default function Affichagecells(props) {
+export default function DisplayCells(props) {
     var config = props.config;
     var cells = [];
-    var debut, fin;
     if (config) {
         config.forEach(function (current, index) {
             if (current === '1')

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Row, Col, Container, Jumbotron, ButtonGroup, Button } from 'react-bootstrap';
+import { Row, Col, Container, Jumbotron, ButtonGroup, Button, ButtonToolbar } from 'react-bootstrap';
 
-class Saisie extends Component {
+class Inputs extends Component {
 
     constructor(props) {
         super(props);
@@ -25,17 +25,19 @@ class Saisie extends Component {
                 </Row>
                 <Row>
                     <Col>
-                        <ButtonGroup>
-                            <Button variant="outline-secondary" onClick={this.props.addQuietCell}>
-                                + Quiet Cell
+                        <ButtonToolbar className="justify-content-between">
+                            <ButtonGroup Style="flex-wrap: wrap;">
+                                <Button variant="outline-secondary" onClick={this.props.addQuietCell}>
+                                    + Quiet Cell
                             </Button>
-                            <Button variant="outline-secondary" onClick={this.props.addExcitedCell}>
-                                + Excited Cell
+                                <Button variant="outline-secondary" onClick={this.props.addExcitedCell}>
+                                    + Excited Cell
                             </Button>
-                            <Button variant="danger" onClick={this.props.resetConfig} className='float-right'>
-                                Reset
+                                <Button variant="danger" onClick={this.props.resetConfig} className='float-right'>
+                                    Reset
                             </Button>
-                        </ButtonGroup>
+                            </ButtonGroup>
+                        </ButtonToolbar>
                     </Col>
 
                     <Col>
@@ -70,4 +72,4 @@ class Saisie extends Component {
     }
 }
 
-export default Saisie;
+export default Inputs;
