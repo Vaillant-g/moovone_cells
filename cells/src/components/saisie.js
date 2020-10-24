@@ -5,29 +5,13 @@ class Saisie extends Component {
 
     constructor(props) {
         super(props);
-        this.add1 = this.add1.bind(this);
-        this.add0 = this.add0.bind(this);
         this.handleKchange = this.handleKchange.bind(this);
-        this.startSimulation = this.startSimulation.bind(this);
-        this.resetConfig = this.resetConfig.bind(this);
-    }
-    add1() {
-        this.props.addExcitedCell();
-    }
-    add0() {
-        this.props.addQuietCell();
     }
 
     handleKchange(e) {
         this.props.saveKvalue(e.target.value);
     }
-    startSimulation() {
-        this.props.startSimulation();
-    }
 
-    resetConfig() {
-        this.props.resetConfig();
-    }
 
     render() {
 
@@ -42,13 +26,13 @@ class Saisie extends Component {
                 <Row>
                     <Col>
                         <ButtonGroup>
-                            <Button variant="outline-secondary" onClick={this.add0}>
+                            <Button variant="outline-secondary" onClick={this.props.addQuietCell}>
                                 + Quiet Cell
                             </Button>
-                            <Button variant="outline-secondary" onClick={this.add1}>
+                            <Button variant="outline-secondary" onClick={this.props.addExcitedCell}>
                                 + Excited Cell
                             </Button>
-                            <Button variant="danger" onClick={this.resetConfig} className='float-right'>
+                            <Button variant="danger" onClick={this.props.resetConfig} className='float-right'>
                                 Reset
                             </Button>
                         </ButtonGroup>
@@ -64,7 +48,7 @@ class Saisie extends Component {
                         </div>
                     </Col>
                     <Col>
-                        <Button onClick={this.startSimulation}>Start Simulation</Button>
+                        <Button onClick={this.props.startSimulation}>Start Simulation</Button>
                     </Col>
                 </Row>
 

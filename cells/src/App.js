@@ -21,39 +21,39 @@ class App extends Component {
     };
   }
 
-  setStepValue(newStepValue) {
+  setStepValue = (newStepValue) => {
     this.setState({
       step: newStepValue,
       currentConfiguration: this.state.simulation[this.state.step]
     })
   }
 
-  saveKvalue(kInput) {
+  saveKvalue = (kInput) =>  {
     if (kInput > 0) {
       this.setState({ tmpk: kInput })
     }
 
   }
 
-  saveInput(newInput) {
+  saveInput = (newInput) => {
     this.setState({ initialConfiguration: newInput.split(',') });
   }
 
-  addExcitedCell() {
+  addExcitedCell = () => {
     var newInitialConfiguration = this.state.initialConfiguration.concat('1');
     this.setState({ initialConfiguration: newInitialConfiguration })
   }
 
-  addQuietCell() {
+  addQuietCell = () => {
     var newInitialConfiguration = this.state.initialConfiguration.concat('0');
     this.setState({ initialConfiguration: newInitialConfiguration })
   }
 
-  resetConfig() {
+  resetConfig = () => {
     this.setState({ initialConfiguration: [] })
   }
 
-  startSimulation() {
+  startSimulation = () => {
     var tmp = cellsReact(this.state.initialConfiguration, this.state.tmpk);
 
     this.setState({
@@ -69,17 +69,17 @@ class App extends Component {
           <Col>
             <Saisie
               configuration={this.state.initialConfiguration}
-              addExcitedCell={this.addExcitedCell.bind(this)}
-              addQuietCell={this.addQuietCell.bind(this)}
+              addExcitedCell={this.addExcitedCell}
+              addQuietCell={this.addQuietCell}
 
               tmpk={this.state.tmpk}
-              saveKvalue={this.saveKvalue.bind(this)}
-              resetConfig={this.resetConfig.bind(this)}
-              startSimulation={this.startSimulation.bind(this)}></Saisie>
+              saveKvalue={this.saveKvalue}
+              resetConfig={this.resetConfig}
+              startSimulation={this.startSimulation}></Saisie>
             <Affichage config={this.state.config}></Affichage>
             <Simulation
               k={this.state.k}
-              setStepValue={this.setStepValue.bind(this)}
+              setStepValue={this.setStepValue}
               simulation={this.state.simulation}
               step={this.state.step}
             ></Simulation>
